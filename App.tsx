@@ -180,6 +180,11 @@ export default function App() {
         <p className="text-[10px] text-neutral-500 font-mono tracking-widest">EXPERIMENTAL AUDIO ENGINE</p>
       </div>
 
+      {/* Top center instructions */}
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 pointer-events-none z-50 text-center">
+        <p className="text-[16px] text-white font-mono tracking-widest">UPLOAD MP3 · SELECT MODE · DRAG TO ROTATE · SCROLL TO ZOOM</p>
+      </div>
+
       {/* Controls */}
       <AudioControls />
 

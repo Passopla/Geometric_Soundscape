@@ -62,7 +62,7 @@ export default function AudioControls() {
             ? <Square size={18} fill="black" />
             : <Play size={18} fill="black" className="group-hover:scale-110 transition-transform" />}
           <span className="text-[11px] font-mono uppercase tracking-[0.2em]">
-            {isPlaying ? 'Terminate' : 'Sequence'}
+            Play / Pause
           </span>
         </button>
       )}
