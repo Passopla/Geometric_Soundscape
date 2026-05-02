@@ -9,10 +9,13 @@ Geometric Soundscape analyzes audio in real-time using FFT and maps frequency da
 ### Visualization Modes
 
 **Surface** — A spinning wireframe landscape that ripples and deforms to the music. Louder sounds push the surface higher, and the whole thing slowly rotates. Click and drag to look around, scroll to zoom.
+<img width="1873" height="966" alt="image" src="https://github.com/user-attachments/assets/4fe7001f-225a-4d39-8e20-0d2d81125fbf" />
 
 **Mountain** — A rolling mountain range that builds up over time. Each moment of audio becomes a new ridge, pushing older ones into the background. When the music stops, the mountains gradually flatten back down.
+<img width="1873" height="966" alt="image" src="https://github.com/user-attachments/assets/8079b2a5-4942-46b8-955d-9033a8e0b418" />
 
 **Cube** — Audio waveforms stacked inside a 3D cube, filling it from front to back like layers in a box. The louder the music, the taller the lines. Drag to spin the cube, scroll to zoom in and out.
+<img width="1873" height="966" alt="image" src="https://github.com/user-attachments/assets/2d403d39-d323-4921-99f3-1773b1ac3634" />
 
 ### Post-Processing
 
