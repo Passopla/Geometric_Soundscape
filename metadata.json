@@ -1,0 +1,6 @@
+{
+  "name": "Acoustic Surface Resonance",
+  "description": "An audio-reactive 3D wireframe visualization that maps MP3 frequency data to complex surface geometry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
