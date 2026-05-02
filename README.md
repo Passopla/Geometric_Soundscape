@@ -95,6 +95,9 @@ Audio is loaded through `p5.sound`, analyzed with `p5.FFT` (256 bands, 0.8 smoot
 
 The `PostOverlay` component runs a separate animation loop on two overlay canvases — one for bloom (screen-blended, blurred copy of the scene) and one for grain (pre-baked randomized pixel frames cycled each tick to avoid per-frame generation cost).
 
+## Inspi
+<img width="680" height="498" alt="image" src="https://github.com/user-attachments/assets/8c93a2af-b26c-4afc-91aa-04f6bbc2eb9a" />
+
 ## License
 
 MIT
