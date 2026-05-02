@@ -10,13 +10,13 @@ import TechnicalOverlay from './components/TechnicalOverlay';
 import PostOverlay from './components/PostOverlay';
 import { SURFACE_SKETCH, SURFACE_CONFIG } from './sketches/surface';
 import { MOUNTAIN_SKETCH, MOUNTAIN_CONFIG } from './sketches/mountain';
-import { RETRO_SKETCH, RETRO_CONFIG } from './sketches/retro';
+import { CUBE_SKETCH, CUBE_CONFIG } from './sketches/cube';
 import { POST_CONFIG } from './sketches/post';
 
 // Expose configs to the p5 sketch runtime via window
 (window as any).SURFACE_CONFIG = SURFACE_CONFIG;
 (window as any).MOUNTAIN_CONFIG = MOUNTAIN_CONFIG;
-(window as any).RETRO_CONFIG = RETRO_CONFIG;
+(window as any).CUBE_CONFIG = CUBE_CONFIG;
 (window as any).POST_CONFIG = POST_CONFIG;
 
 const ACOUSTIC_SURFACE_CODE = [
@@ -33,8 +33,8 @@ const ACOUSTIC_SURFACE_CODE = [
   let history = [];
   const maxHistory = 80;
 
-  let retro_rotY = RETRO_CONFIG.rotY;
-  let retro_distance = RETRO_CONFIG.distance;
+  let retro_rotY = CUBE_CONFIG.rotY;
+  let retro_distance = CUBE_CONFIG.distance;
   let retro_dynMax = 1;
   let firstFrame = true;
 
@@ -88,7 +88,7 @@ const ACOUSTIC_SURFACE_CODE = [
       prevMode = mode;
       if (mode === 'surface')  console.log('[SURFACE config]',  JSON.parse(JSON.stringify(window.SURFACE_CONFIG)));
       if (mode === 'mountain') console.log('[MOUNTAIN config]', JSON.parse(JSON.stringify(window.MOUNTAIN_CONFIG)));
-      if (mode === 'retro')    console.log('[RETRO config]',    JSON.parse(JSON.stringify(window.RETRO_CONFIG)));
+      if (mode === 'retro')    console.log('[RETRO config]',    JSON.parse(JSON.stringify(window.CUBE_CONFIG)));
     }
 
     p.background(0);
@@ -102,7 +102,7 @@ const ACOUSTIC_SURFACE_CODE = [
   `,
   SURFACE_SKETCH,
   `} else if (mode === 'retro') {`,
-  RETRO_SKETCH,
+  CUBE_SKETCH,
   `} else if (mode === 'mountain') {`,
   MOUNTAIN_SKETCH,
   `}
@@ -127,7 +127,7 @@ const ACOUSTIC_SURFACE_CODE = [
       }
     }
     if (mode === 'retro') {
-      console.log('[RETRO config]', { ...JSON.parse(JSON.stringify(window.RETRO_CONFIG)), rotY: +retro_rotY.toFixed(4), distance: +retro_distance.toFixed(2) });
+      console.log('[RETRO config]', { ...JSON.parse(JSON.stringify(window.CUBE_CONFIG)), rotY: +retro_rotY.toFixed(4), distance: +retro_distance.toFixed(2) });
     }
   }
 

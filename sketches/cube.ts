@@ -1,4 +1,4 @@
-// ── RETRO CONFIG ──────────────────────────────────────────────────────────────
+// ── CUBE CONFIG ───────────────────────────────────────────────────────────────
 //  Edit these values and save — changes appear instantly in the browser.
 //
 //  rotY        horizontal camera angle  (radians)  drag also updates this at runtime
@@ -8,7 +8,7 @@
 //  offsetY     vertical position       (px)       negative = up,    positive = down
 //  cubeSize    size of the cube        (px)       equal on all sides
 // ─────────────────────────────────────────────────────────────────────────────
-export const RETRO_CONFIG = {
+export const CUBE_CONFIG = {
   rotY:         0.43,
   elevation:    0.40,
   distance:     720,
@@ -19,14 +19,14 @@ export const RETRO_CONFIG = {
   maxAmplitude: 0.25,  // fraction of cubeSize the loudest frequency reaches
 };
 
-export const RETRO_SKETCH = `
-    let eyeX = retro_distance * Math.sin(retro_rotY) * Math.cos(RETRO_CONFIG.elevation);
-    let eyeY = -retro_distance * Math.sin(RETRO_CONFIG.elevation);
-    let eyeZ = retro_distance * Math.cos(retro_rotY) * Math.cos(RETRO_CONFIG.elevation);
-    p.camera(eyeX, eyeY, eyeZ, RETRO_CONFIG.offsetX, RETRO_CONFIG.offsetY, 0, 0, 1, 0);
+export const CUBE_SKETCH = `
+    let eyeX = retro_distance * Math.sin(retro_rotY) * Math.cos(CUBE_CONFIG.elevation);
+    let eyeY = -retro_distance * Math.sin(CUBE_CONFIG.elevation);
+    let eyeZ = retro_distance * Math.cos(retro_rotY) * Math.cos(CUBE_CONFIG.elevation);
+    p.camera(eyeX, eyeY, eyeZ, CUBE_CONFIG.offsetX, CUBE_CONFIG.offsetY, 0, 0, 1, 0);
     p.push();
 
-    let S = RETRO_CONFIG.cubeSize;
+    let S = CUBE_CONFIG.cubeSize;
     let maxSlices = 55;
 
     if (isPlaying) {
@@ -38,7 +38,7 @@ export const RETRO_SKETCH = `
             raw.push(v);
         }
         retro_dynMax = Math.max(retro_dynMax * 0.998, frameMax, 1);
-        let frame = raw.map(v => p.map(v, 0, retro_dynMax, 0, S * RETRO_CONFIG.maxAmplitude));
+        let frame = raw.map(v => p.map(v, 0, retro_dynMax, 0, S * CUBE_CONFIG.maxAmplitude));
         history.unshift(frame);
         if (history.length > maxSlices) history.pop();
     } else {
@@ -105,7 +105,7 @@ export const RETRO_SKETCH = `
     for (let i = count - 1; i >= 0; i--) {
         let z = p.map(i, 0, maxSlices - 1, S/2, -S/2);
         let alpha = p.map(i, count - 1, 0, 40, 230);
-        p.strokeWeight(RETRO_CONFIG.lineWeight);
+        p.strokeWeight(CUBE_CONFIG.lineWeight);
         p.stroke(255, alpha);
 
         p.line(-S/2, S/2, z, -S/2, -S/2 - history[i][0], z);
